@@ -1,0 +1,38 @@
+.content-type-one,
+.content-type-two {
+    display: grid;
+    grid-template-columns: 5% 45%  45% 5%;
+    grid-template-rows: auto;
+}
+
+.content-type-one {
+    grid-template-areas: 
+    ". title image ."
+    ". area-content image .";
+}
+
+.content-type-two {
+    background-color: aquamarine;
+    grid-template-areas:
+    ". image title ."
+    ". image area-content .";
+}
+
+.content-type-one h2,
+.content-type-two h2 {
+    grid-area: title;
+}
+
+.content-type-one p,
+.content-type-two p {
+    grid-area: area-content;    
+}
+
+.content-type-one img,
+.content-type-two img {
+    grid-area: image;
+    justify-self: center;
+    align-self: center;
+    max-height: 300px;
+}
+

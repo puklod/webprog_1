@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/css/page.css" />
+    <link rel="stylesheet" href="/css/common.css" />
     <link rel="stylesheet" href="/css/navigation.css" />
+    <link rel="stylesheet" href="/css/rolam.css" />
     <title>Webprog 1 Beadandó</title>
 </head>
 <body>
@@ -13,21 +14,17 @@
         <span class="grid-fourth-column">BU4YEU</span>
     </header>
     <section id="hero" role="region" aria-labelledby="hero-title">
-        <h4 id="hero-title">Webprog 1 Beadandó</h3>
-        <h4>"This is not farewell, this is only goodbye"</h3>
+        <div>
+            <h3 id="hero-title">Webprog 1 Beadandó</h3>
+            <h4>"This is not farewell, this is only goodbye"</h4>
+        </div>
     </section>
     <nav>
-        <ul>
-            <li><a href="index.html">Rólam</a></li>
-            <li><a href="/pages/css.html">CSS</a></li>
-            <li><a href="/pages/todo.html">TODO</a></li>
-            <li><a href="/pages/macskak.html">Macskák</a></li>
-        </ul>
     </nav>
     <main>
-        <div id="about-me">
-            <div class="content-type-one">
+            <section class="content-type-one" role="region" aria-labelledby="about-me-title">
                 <img src="/img/en.jpg" class="content-img" alt="Kép rólam">
+                <h2 id="about-me-title">Bemutatkozás:</h2>
                 <p>
                     Szép napot! Pukló Dániel vagyok, 31 éve születtem Tatabányán, jelenleg is ebben a városban élek.
                     A középiskolát Tatán végeztem, szintén itt szereztem meg az "Informatikai hálózatépítő és üzemeltető"
@@ -36,9 +33,10 @@
                     rendszergazdaként dolgozom. Néhány éve elvégeztem egy "Junior java backend fejlesztő" kézést is, jelenleg az
                     az egri Eszterházy Károly Katolikus Egyetemen tanulok programtervező informatikusként, levelezős tanrendben.
                 </p>
-            </div>
-            <div class="content-type-two">
+            </section>
+            <section class="content-type-two" role="region" aria-labelledby="workplace-title">
                 <img src="img/konyvtar.JPG" class="content-img" alt="Könyvtári kép">
+                <h2 id="workplace-title">Munkahelyem:</h2>
                 <p>
                     Sok ember gondolja úgy, hogy a könyvtár egy dögunalmas hely, ahol a dolgozók egész nap csak olvasgatnak.
                     Nem tudom, hogy ez a kijelentés valaha is megállta-e a helyét, ami biztos, hogy jelenleg a könyvtárak egyre
@@ -51,9 +49,10 @@
                     levelezőrendszert, felügyeljük a munkaállomásokat és a hozzánk tartozó hatvan kistelepülést is, továbbá ügyelünk arra,
                     hogy a könyvtár saját rendszerével minden a lehető legnagyobb rendben legyen.
                 </p>
-            </div>
-            <div class="content-type-one two-column-grid">
+            </section>
+            <section class="content-type-one two-column-grid" role="region" aria-labelledby="hobbi-tilte">
                 <img src="/img/hobbi.jpg" class="content-img" alt="hobbi">
+                <h2 id="hobbi-tilte">Hobbijaim:</h2>
                 <p>
                     A hobbijaimra mostanában elég kevés időm jut. Menyaszonyommal tervezgetjük az esküvőnket, a szabadidőm legnagyobb részét
                     elviszi a tanulás. Ha találok egy kis időt kikapcsolódni, azt vagy valamilyen film/sorozat nézése vagy valamilyen játék
@@ -62,8 +61,8 @@
                     mert mellettük lehet zenét hallgatni. A kedvenc műfajom a punk rock, több ilyen stílusú koncerten is voltam már. Persze, a Rammstein-nél
                     jobb koncertet senki sem tud adni.
                 </p>
-            </div>
-        </div>
+            </section>
     </main>
 </body>
+<script src="/js/menu.js"></script>
 </html>
