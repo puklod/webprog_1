@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="/css/navigation.css" />
-    <link rel="stylesheet" href="/css/rolam.css" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <link rel="stylesheet" href="/css/common.css" >
+    <link rel="stylesheet" href="/css/navigation.css" >
+    <link rel="stylesheet" href="/css/css.css" >
     <title>Webprog 1 Beadandó</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
         <span class="grid-third-column">Pukló Dániel</span>
         <span class="grid-fourth-column">BU4YEU</span>
     </header>
-    <section id="hero" role="region" aria-labelledby="hero-title">
+    <section id="hero" aria-labelledby="hero-title">
         <div>
             <h3 id="hero-title">Webprog 1 Beadandó</h3>
             <h4>"This is not farewell, this is only goodbye"</h4>
@@ -22,7 +22,22 @@
     <nav>
     </nav>
     <main>
+        <div class="todo-input-region">
+            <input type="text" id="input-todo" name="input-todo">
+            <button type="button" id="add-todo" name="add-todo">Hozzáadás</button>
+        </div>
+        <div class="todo-text-region">
+            <p>Jelenleg 0db befejezetlen teendő van.</p>
+        </div>
+        <div class="todo-card-region">
+            <div class="todo-card">
+                <span class="todo-card-text">Teendnő 1</span>
+                <button type="button" class="remove-card-button" name="remove-card"><span>X</span></button>
+                <button type="button" class="todo-done-button" name="todo-done-button"><spn>check</spn></button>
+            </div>
+        </div>
     </main>
-</body>
 <script src="/js/menu.js"></script>
+<script src="/js/todo.js"></script>
+</body>
 </html>

@@ -1,7 +1,7 @@
 const navigation = {
     parentElement: document.querySelector('body > nav'),
     menuLabels: ["Rólam","CSS","TODO","Macskák"],
-    hrefs: ["index.html","/pages/css.html","/pages/todo.html","/pages/macskak.html"],
+    hrefs: ["/index.html","/pages/css.html","/pages/todo.html","/pages/macskak.html"],
 }
 
 setMenuType();
