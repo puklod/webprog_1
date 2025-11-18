@@ -1,9 +1,6 @@
-const inputField = document.getElementById("input-todo");
-const submitButton = document.getElementById("add-todo");
-const textRegion = document.querySelector('main > .todo-text-region');
-const cardRegion = document.querySelector('main > .todo-card-region');
-
 class Card {
+    static currentCardsCount = 0;
+
     constructor(text){
         this.container = document.createElement('div');
         this.textField = document.createElement('span');
@@ -14,6 +11,8 @@ class Card {
         this.setClasses();
         this.setListeners();
         this.setTextFieldData(text);
+        
+        Card.currentCardsCount++;
     }
 
     init() {
@@ -36,10 +35,15 @@ class Card {
 
     removeEvent(parentElement) {
         parentElement.remove();
+        Card.currentCardsCount--;
+        modifyTodoTextRegion();
     }
 
     checkEvent(parentElement) {
-        console.log("done")
+        for(let child of parentElement.childNodes){
+            if(child.classList.contains("remove-card-button"))
+                child.remove();
+        }
     }
 
     setTextFieldData(textFieldData) {
@@ -49,12 +53,21 @@ class Card {
     getCard(){
         return this.container;
     }
+
 }
 
-submitButton.addEventListener('click',submitEvent)
+staticPageElements = {
+    inputField: document.getElementById("input-todo"),
+    submitButton: document.getElementById("add-todo"),
+    countText: document.querySelector('main > .todo-text-region > p'),
+    cardRegion: document.querySelector('main > .todo-card-region')
+}
+
+staticPageElements.submitButton.addEventListener('click',submitEvent);
+staticPageElements.inputField.addEventListener('input',removeWarning)
 
 function submitEvent() {
-    if (inputField.value.trim().length == 0 )
+    if (staticPageElements.inputField.value.trim().length == 0 )
     {
         inputErrorAction();
     }
@@ -62,26 +75,34 @@ function submitEvent() {
     {
         submitCard();
         clearInputField();
+        modifyTodoTextRegion();
     }
 }
 
 function inputErrorAction() {
-    inputField.setCustomValidity("A mező nem lehet üres!")
-    inputField.reportValidity();
+    staticPageElements.inputField.setCustomValidity("A mező nem lehet üres!")
+    staticPageElements.inputField.reportValidity();
+}
+
+function removeWarning() {
+    staticPageElements.inputField.setCustomValidity("");
 }
 
 function submitCard() {
-    let cardText = inputField.value.trim();
+    let cardText = staticPageElements.inputField.value.trim();
     let card = new Card(cardText);
 
     appendCard(card.getCard());
 }
 
-
 function appendCard(div) {
-    cardRegion.appendChild(div);
+    staticPageElements.cardRegion.appendChild(div);
 }
 
 function clearInputField() {
-    inputField.value = "";
+    staticPageElements.inputField.value = "";
+}
+
+function modifyTodoTextRegion() {
+    staticPageElements.countText.textContent = "Jelenleg " + Card.currentCardsCount +"db befejezetlen teendő van."
 }

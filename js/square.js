@@ -9,9 +9,9 @@ let scaleInput = document.getElementById("input-scale");
 let scaveXInput = document.getElementById("input-scaveX");
 let resetButton = document.getElementById("reset-button");
 
-document.addEventListener("input",checkValueChange);
+document.addEventListener("input",transformSquare);
 
-function checkValueChange() {
+function transformSquare() {
     element = document.activeElement;
     elementName = element.getAttribute("name");
     if(element.value.length < 1)
@@ -20,21 +20,21 @@ function checkValueChange() {
     }
     else
     {
-    elementValue = element.value;
+        elementValue = element.value;
     }
+
+    doTransformation(elementName);
+}
+
+function doTransformation(elementName) {
     let measurement = getMeasurement(elementName);
     transformProperty = elementName + "(" + elementValue + measurement + ")";
 
-            console.log(transformProperty)
-
-    console.log(transformProperty)
-
     if(isNaN(elementValue) === false && elementValue.length > 0){
         square.style.setProperty("transform",transformProperty);
-        console.log("lefut")
     }
-}
 
+}
 
 function getMeasurement(name) {
 
