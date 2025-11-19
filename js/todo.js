@@ -85,7 +85,8 @@ function inputErrorAction() {
 }
 
 function removeWarning() {
-    staticPageElements.inputField.setCustomValidity("");
+    if(staticPageElements.inputField.validationMessage !== "")
+           staticPageElements.inputField.setCustomValidity("");
 }
 
 function submitCard() {

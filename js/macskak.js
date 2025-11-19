@@ -1,8 +1,47 @@
 const catsTableBody = document.querySelector('main > .cats-table > tbody');
 const nameInputField = document.getElementById('input-cat-name');
 const originInputField = document.getElementById('input-cat-origin');
-const searchButton = document.getElementById('cat-search-button');
+const inputField = document.querySelector('main > .input-field');
+const searchButton = document.getElementById('search-cat-button');
 const params = new URLSearchParams();
+
+searchButton.addEventListener('click',clickEvent);
+nameInputField.addEventListener('input',removeWarning);
+nameInputField.addEventListener('click',removeWarning);
+originInputField.addEventListener('input',removeWarning);
+originInputField.addEventListener('click',removeWarning);
+
+function clickEvent() {
+    if(nameInputField.value.trim().length < 1 && originInputField.value.trim().length < 1)
+    {
+        inputErrorAction();
+    }
+    else
+    {
+        searchdata()
+    }
+}
+
+function inputErrorAction() {
+    nameInputField.setCustomValidity("Legalább az egyik mezőt ki kell tölteni!")
+
+    nameInputField.style.setProperty("outline","none");
+    nameInputField.style.setProperty("border-color","red");
+    originInputField.style.setProperty("border-color","red");
+
+    nameInputField.reportValidity();
+
+    setTimeout(()=> removeWarning(),2000);
+
+}
+
+function removeWarning() {
+        nameInputField.style.removeProperty("outline");
+        nameInputField.style.removeProperty("border-color");
+        originInputField.style.removeProperty("border-color");
+
+        nameInputField.report;
+}
 
 getCatsData();
 
