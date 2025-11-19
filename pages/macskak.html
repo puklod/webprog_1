@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="/css/navigation.css" />
-    <link rel="stylesheet" href="/css/rolam.css" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <link rel="stylesheet" href="/css/common.css" >
+    <link rel="stylesheet" href="/css/navigation.css" >
+    <link rel="stylesheet" href="/css/macskak.css" >
     <title>Webprog 1 Beadandó</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
         <span class="grid-third-column">Pukló Dániel</span>
         <span class="grid-fourth-column">BU4YEU</span>
     </header>
-    <section id="hero" role="region" aria-labelledby="hero-title">
+    <section id="hero" aria-labelledby="hero-title">
         <div>
             <h3 id="hero-title">Webprog 1 Beadandó</h3>
             <h4>"This is not farewell, this is only goodbye"</h4>
@@ -22,7 +22,28 @@
     <nav>
     </nav>
     <main>
+        <div>
+            <label for="input-catName">Név:</label>
+            <input type="text" id="input-cat-name" name="name">
+            <label for="input-catOrigin">Származás</label>
+            <input type="text" id="input-cat-origin" name="origin">
+            <button type="button" id="search-cat-button">Szűrés</button>
+        </div>
+        <table class="cats-table">
+            <thead>
+                <tr>
+                    <th>Sorszám</th>
+                    <th>Név</th>
+                    <th>Származás</th>
+                    <th>Hossz</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
     </main>
-</body>
 <script src="/js/menu.js"></script>
+<script src="/js/macskak.js"></script>
+</body>
 </html>
