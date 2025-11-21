@@ -1,14 +1,17 @@
 const url = "http://localhost:3000/cats";
 let searchQuery = url + "?";
 let lastQueryParams = "";
-const catsTable = document.querySelector('main > .cats-table');
+let currentCatList;
+const mainField = document.querySelector('main');
+const catsField = document.querySelector('main > .cats-field');
+const catsTable = document.querySelector('main > .cats-field > .cats-table');
 const nameInputField = document.getElementById('input-cat-name');
 const originInputField = document.getElementById('input-cat-origin');
-const inputField = document.querySelector('main > .input-field');
+const catSearchForm = document.querySelector('main > .cats-field > .cat-search-form');
 const searchButton = document.getElementById('search-cat-button');
 let params = new URLSearchParams();
 
-searchButton.addEventListener('click',searchData);
+catSearchForm.addEventListener('submit',searchData);
 
 
 getCatsData(url);
@@ -21,16 +24,27 @@ async function getCatsData(query) {
             throw new Error(`Response status: ${response.status}`);
         }
 
-        console.log(await response.formData().then((name)=>{name == "ez"}));
-        const result = await response.json();
+        if (catsField.classList.contains('error')){
+            document.querySelector('main .error-string').remove();
+            catsField.classList.remove('error')
+        }
+        currentCatList = await response.json();
 
-        readData(result);
+        readData(currentCatList);
     }
     catch(error)
     {
         console.error(error.message);
+        let span = document.createElement('span');
+            span.textContent = "Adatbázishiba";
+            span.classList.add("error-string");
+
+        mainField.append(span);
+        catsField.classList.add('error');
     }
 }
+
+
 /*
 function setLastQueryParams(query) {
     let queryParams = query.split("?")[1];
@@ -69,6 +83,8 @@ function readData(result) {
         }
 
 
+        removeButton.addEventListener('click',() => removeCatRow(cat.id));
+
         tr.append(idCell);
         tr.append(nameCell);
         tr.append(originCell);
@@ -81,7 +97,48 @@ function readData(result) {
     catsTable.append(tbody)
 }
 
-function searchData(){
+async function removeCatRow(excludedId){
+    try
+    {
+         if (catsField.classList.contains('error')){
+            document.querySelector('main .error-string').remove();
+            catsField.classList.remove('error')
+        }
+    const response = await fetch(url + `/${excludedId}`,{
+        method: "DELETE",
+    })
+
+    if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+    }
+
+    document.querySelector("main > .cats-field > .cats-table tbody").remove();
+        if(lastQueryParams == "")
+        {
+            getCatsData(url);
+        }
+        else
+        {
+            getCatsData(searchQuery + lastQueryParams);
+        }
+    
+
+
+    }
+    catch(error) {
+        console.error(error.message);
+        let span = document.createElement('span');
+            span.textContent = "Adatbázishiba";
+            span.classList.add("error-string");
+
+        mainField.append(span);
+        catsField.classList.add('error');
+    }
+}
+
+function searchData(event){
+    event.preventDefault();
+
     let searchedCatName = nameInputField.value;
     let searchedCatOrigin = originInputField.value;
 
@@ -99,12 +156,9 @@ function searchData(){
         params.append("origin",searchedCatOrigin);
     }
 
-    params.append("exclude","Simon");
-
     if(lastQueryParams !== params.toString()){
         lastQueryParams = params.toString();
-        console.log(params.toString());
-        document.querySelector("main > .cats-table tbody").remove();
+        document.querySelector("main > .cats-field >.cats-table tbody").remove();
 
         if(params.toString() == "")
         {
@@ -121,6 +175,7 @@ function searchData(){
 }
 
 function clearParams() {
+    params.delete("id");
     params.delete("name");
     params.delete("origin");
 }

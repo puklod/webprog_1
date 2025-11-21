@@ -2,10 +2,11 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/common.css" >
     <link rel="stylesheet" href="/css/navigation.css" >
     <link rel="stylesheet" href="/css/css.css" >
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <title>Webprog 1 Beadandó</title>
 </head>
 <body>
@@ -22,13 +23,14 @@
     <nav>
     </nav>
     <main>
-        <div class="wrapper">
-            <div>
-                <span>Valóban ezt szeretné?</span>
+        <div class="background">
+        <div class="input-wrapper">
+            <div class="confirmation-area">
+                <p class="confirmation-text">Valóban ezt szeretné?</p>
                 <button id="yes-button" type="button" value="yes">Igen</button>
                 <button id="back-button" type="button" value="no">Mégsem</button>
             </div>
-            <div>
+            <div class="input-field">
                 <label for="input-translateX">V. Eltolás:</label>
                 <input type="text" id="input-translateX" name="translateX" value="0">
                 <label for="input-translateY">F. Eltolás:</label>
@@ -39,14 +41,17 @@
                 <input type="text" id="input-scale" name="scale" value="0">
                 <label for="input-skewX">Ferdítés:</label>
                 <input type="text" id="input-skewX" name="skewX" value="0">
+            </div>
+            <div class="button-area">
                 <button type="button" id="reset-button" name="reset">Transzformációk törlése</button>
             </div>
             </div>
-        <div>
-            <div id="square"></div>
         </div>
+            <div class="square-wrapper">
+                <div id="square"></div>
+            </div>
     </main>
 <script src="/js/menu.js"></script>
-<script src="/js/square.js"></script>
+<script src="/js/css.js"></script>
 </body>
 </html>

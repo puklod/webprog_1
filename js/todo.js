@@ -58,15 +58,17 @@ class Card {
 
 staticPageElements = {
     inputField: document.getElementById("input-todo"),
-    submitButton: document.getElementById("add-todo"),
+    addCardForm: document.querySelector('main > .add-card-form'),
     countText: document.querySelector('main > .todo-text-region > p'),
     cardRegion: document.querySelector('main > .todo-card-region')
 }
 
-staticPageElements.submitButton.addEventListener('click',submitEvent);
-staticPageElements.inputField.addEventListener('input',removeWarning)
+staticPageElements.addCardForm.addEventListener('submit',submitEvent);
+staticPageElements.inputField.addEventListener('input',removeWarning);
 
-function submitEvent() {
+function submitEvent(event) {
+    event.preventDefault();
+
     if (staticPageElements.inputField.value.trim().length == 0 )
     {
         inputErrorAction();

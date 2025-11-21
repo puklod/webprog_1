@@ -1,16 +1,38 @@
 nav {
     background-color: goldenrod;
+    display: grid;
+    grid-template-columns: 5% [content] 90% 5%;
 }
 
 nav > ul {
     display: flex;
+    padding: 0;
+    margin: 0;
+    width: max-content;
+    grid-column: content;
 }
 
 nav > ul > li {
     list-style: none;
 }
 
+nav > ul > li:not(.active):hover {
+    background: #a47c17;
+}
+
+nav > ul > li:not(.active):hover > a {
+    color: wheat;
+}
+
+nav > ul > li.active {
+    background: #ffd66e;
+}
+
 nav > ul > li > a {
     text-decoration: none;
     padding: 10px;
+    display: block;
+    color: black;
+    font-family: "Helvetica", Verdana;
+     font-weight: bold;
 }

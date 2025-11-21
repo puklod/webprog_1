@@ -21,6 +21,7 @@
 .content-type-one h2,
 .content-type-two h2 {
     grid-area: title;
+    align-content: end;
 }
 
 .content-type-one p,
@@ -34,5 +35,6 @@
     justify-self: center;
     align-self: center;
     max-height: 300px;
+    padding: 10px;
 }
 

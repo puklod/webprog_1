@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/css/common.css" >
     <link rel="stylesheet" href="/css/navigation.css" >
     <link rel="stylesheet" href="/css/macskak.css" >
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <title>Webprog 1 Beadandó</title>
 </head>
 <body>
@@ -22,12 +23,13 @@
     <nav>
     </nav>
     <main>
-        <form class="input-field">
+        <div class="cats-field">
+        <form class="cat-search-form">
             <label for="input-catName">Név:</label>
             <input type="text" id="input-cat-name" name="name">
             <label for="input-catOrigin">Származás</label>
             <input type="text" id="input-cat-origin" name="origin">
-            <button type="button" id="search-cat-button">Szűrés</button>
+            <button type="submit" id="search-cat-button">Szűrés</button>
         </form>
         <table class="cats-table">
             <thead>
@@ -40,6 +42,7 @@
                 </tr>
             </thead>
         </table>
+        </div>
     </main>
 <script src="/js/menu.js"></script>
 <script src="/js/macskak.js"></script>
