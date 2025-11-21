@@ -7,15 +7,15 @@
 
 .content-type-one {
     grid-template-areas: 
-    ". title image ."
-    ". area-content image .";
+    ". image title ."
+    ". image area-content .";
 }
 
 .content-type-two {
     background-color: aquamarine;
     grid-template-areas:
-    ". image title ."
-    ". image area-content .";
+    ". title image ."
+    ". area-content image .";
 }
 
 .content-type-one h2,
