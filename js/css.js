@@ -10,6 +10,7 @@ let element;
 let elementName;
 let elementValue;
 let confirmArea = document.querySelector("main .confirmation-area");
+let inputAreadWrapper = document.querySelector("main .input-area-wrapper");
 let backButton = document.getElementById("back-button");
 let confirmButton = document.getElementById("yes-button")
 let resetButton = document.getElementById("reset-button");
@@ -73,9 +74,12 @@ function resetValues() {
 }
 
 function showConfirmArea() {
+    inputAreadWrapper.style.setProperty("opacity","0");
     confirmArea.style.setProperty("z-index",2);
+
 }
 
 function hideConfirmArea() {
+    inputAreadWrapper.style.setProperty("opacity","1");
     confirmArea.style.setProperty("z-index",0);
 }

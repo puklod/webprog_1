@@ -5,37 +5,24 @@ const navigation = {
 }
 
 setMenuType();
-appendMenu();
+createNavigation();
 window.addEventListener("resize",switchMenuType);
 
 function setMenuType() {
     if(window.outerWidth < 600)
     {
-        navigation.parentElement.classList.add("mobile")
+        navigation.parentElement.classList.add("mobile");
+        navigation.parentElement.classList.add("closed");
     }
     else
     {
-        navigation.parentElement.classList.add("desktop")
+        navigation.parentElement.classList.add("desktop");
     }
 }
 
-function appendMenu(){
+function createNavigation() {
     let parentElement = navigation.parentElement;
-    let linkList = createLinkList();
-
-    if(parentElement.classList.contains("desktop"))
-    {
-        parentElement.append(linkList);
-    }
-    else
-    {
-        linkList.classList.add("closed");
-        parentElement.append(createMenuButton());
-        parentElement.append(linkList);
-    }
-}
-
-function createLinkList() {
+    let button = createMenuButton();
     let ul = document.createElement('ul');
 
     for(let i=0; i<navigation.menuLabels.length; i++){
@@ -50,54 +37,56 @@ function createLinkList() {
         ul.append(li);
     }
 
-    return ul;
+    parentElement.append(button);
+    parentElement.append(ul);
 }
 
 function createMenuButton() {
+    let lineOne = document.createElement('span');
+                  lineOne.textContent = "\u2015";
+                  lineOne.classList.add('line-one');
+    let lineTwo = document.createElement('span');
+                  lineTwo.textContent = "\u2015";
+                  lineTwo.classList.add('line-two');
     let menuButton = document.createElement('button');
              menuButton.classList.add("button")
-             menuButton.append("ÉNVAGYOKAZIKON");
+             menuButton.append(lineOne);
+             menuButton.append(lineTwo);
              menuButton.addEventListener('click',manipulateMenu);
 
     return menuButton;
 }
 
 function manipulateMenu() {
-    let linkList = navigation.parentElement.querySelector('ul');
+    let parentElement = navigation.parentElement;
 
-    if(linkList.classList.contains("closed"))
+    if(parentElement.classList.contains("closed"))
     {
-        linkList.classList.remove("closed");
-        linkList.classList.add("opened");
+        parentElement.classList.remove("closed");
+        parentElement.classList.add("opened");
     }
     else
     {
-        linkList.classList.remove("opened");
-        linkList.classList.add("closed");
+        parentElement.classList.remove("opened");
+        parentElement.classList.add("closed");
     }
 }
 
 
 function switchMenuType() {
     let parentElement = navigation.parentElement;
-    const ul = parentElement.querySelector('ul');
-    const button = parentElement.querySelector('.button');
 
     if(window.outerWidth < 600 && parentElement.classList.contains("desktop"))
     {
         parentElement.classList.remove("desktop");
         parentElement.classList.add("mobile");
-        parentElement.removeChild(ul);
-        appendMenu();
+        parentElement.classList.add("closed");
     }
     else if(window.outerWidth > 600 && parentElement.classList.contains("mobile"))
     {
         parentElement.classList.remove("mobile");
         parentElement.classList.add("desktop");
-        if(button && ul){
-            parentElement.removeChild(button);
-            parentElement.removeChild(ul);
-        }
-        appendMenu();
+        parentElement.classList.remove("opened");
+        parentElement.classList.remove("closed");
     }   
 }

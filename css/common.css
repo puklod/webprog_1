@@ -2,12 +2,27 @@ html {
     min-width: 350px;
 }
 
+main:has(> .content),
+main > section,
+nav,
+#hero {
+    display: grid;
+    grid-template-columns: 15% [content]70% 15%;
+}
+
+main > .content,
+main > section > .content {
+    grid-column: content;
+    margin: 0;
+    padding: 0;
+}
+
 header{
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
     display: grid;
-    grid-template-columns: 5% 5% [third] 80% [fourth] 5% 5%;
+    grid-template-columns: 15% 5% [third] 60% [fourth] 5% 15%;
 }
 
 body {
@@ -33,16 +48,13 @@ body {
     align-content: end;
 }
 
-#hero > div {
+#hero > .content {
     margin: 20px 20px 20px 20px;
+    grid-column: content;
 }
 
-#hero > div h3,
-#hero > div h4 {
+#hero div h3,
+#hero div h4 {
     padding: 2px;
     margin: 0;
-}
-
-main {
-    margin-top: 10px;
 }

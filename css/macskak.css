@@ -1,0 +1,23 @@
+.input {
+    width: 120px;
+}
+
+.cat-search-form {
+    display: grid;
+  grid-template-columns: 5% 26% 11% auto auto 5%;
+}
+
+#search-cat-button {
+    width: 80px;
+  margin-left: auto;
+
+}
+
+.cats-field {
+    margin-top: 10px;
+}
+
+.cats-table {
+    width: 100%;
+    text-align: left;
+}

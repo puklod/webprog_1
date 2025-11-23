@@ -1,0 +1,47 @@
+main > .content {
+    margin-top: 30px;
+}
+
+.add-card-form {
+    display: grid;
+    grid-template-columns: 70% 10%;
+}
+
+#input-todo {
+    margin-right: 15px;
+}
+
+.todo-card {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-height: 50px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: [text] 90% [remove] 5% [check] 5%;
+    height: max-content;
+    align-content: center;
+    background: red;
+}
+
+.todo-card-text {
+    margin: 0;
+    grid-column: text;
+    line-break: anywhere;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.remove-card-button,
+.check-card-button {
+    background: none;
+    border: none;
+    font-size: 30px;
+}
+
+.remove-card-button {
+    grid-column: remove;
+}
+
+.check-card-button {
+    grid-column: check;
+}

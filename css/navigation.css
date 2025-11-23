@@ -1,7 +1,6 @@
 nav {
     background-color: goldenrod;
     display: grid;
-    grid-template-columns: 5% [content] 90% 5%;
 }
 
 nav > ul {
@@ -10,6 +9,20 @@ nav > ul {
     margin: 0;
     width: max-content;
     grid-column: content;
+}
+
+nav.mobile > ul {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav.closed > ul {
+    display: none;
+}
+
+nav > ul.opened {
+    display: flex;
+    align-items: center;
 }
 
 nav > ul > li {
@@ -35,4 +48,51 @@ nav > ul > li > a {
     color: black;
     font-family: "Helvetica", Verdana;
      font-weight: bold;
+}
+
+nav.desktop > button {
+    display: none;
+}
+
+nav.mobile > button {
+    grid-column: content;
+    background: none;
+    border: none;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+nav.mobile > ul {
+    flex-direction: column;
+    align-items: center;
+}
+
+nav.mobile li {
+    width: 100%;
+    text-align: center;
+}
+
+nav .line-one,
+nav .line-two {
+       font-size: 30px;
+       display: flex;
+       height: 10px;
+       align-items: center;
+}
+
+nav.mobile.opened .line-one {
+    rotate: 60deg;
+    width: max-content;
+    transform: translateX(4px);
+    translate: -1px
+}
+
+nav.mobile.opened .line-two {
+    rotate: -240deg;
+    width: max-content;
+    transform: translatex(-4px);
+    translate: -1px;
+
 }

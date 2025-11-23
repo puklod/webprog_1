@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1" >
-    <link rel="stylesheet" href="/css/common.css" >
-    <link rel="stylesheet" href="/css/navigation.css" >
-    <link rel="stylesheet" href="/css/macskak.css" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/macskak.css">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <title>Webprog 1 Beadandó</title>
 </head>
+
 <body>
     <header class="seven-column-grid">
         <span class="grid-third-column">Pukló Dániel</span>
         <span class="grid-fourth-column">BU4YEU</span>
     </header>
     <section id="hero" aria-labelledby="hero-title">
-        <div>
+        <div class="content">
             <h3 id="hero-title">Webprog 1 Beadandó</h3>
             <h4>"This is not farewell, this is only goodbye"</h4>
         </div>
@@ -23,28 +25,31 @@
     <nav>
     </nav>
     <main>
-        <div class="cats-field">
-        <form class="cat-search-form">
-            <label for="input-catName">Név:</label>
-            <input type="text" id="input-cat-name" name="name">
-            <label for="input-catOrigin">Származás</label>
-            <input type="text" id="input-cat-origin" name="origin">
-            <button type="submit" id="search-cat-button">Szűrés</button>
-        </form>
-        <table class="cats-table">
-            <thead>
-                <tr>
-                    <th>Sorszám</th>
-                    <th>Név</th>
-                    <th>Származás</th>
-                    <th>Hossz</th>
-                    <th></th>
-                </tr>
-            </thead>
-        </table>
+        <div class="content">
+            <div class="cats-field">
+                <form class="cat-search-form">
+                    <label for="input-catName">Név:</label>
+                    <input type="text" id="input-cat-name" class="input" name="name">
+                    <label for="input-catOrigin">Származás:</label>
+                    <input type="text" id="input-cat-origin" class="input" name="origin">
+                    <button type="submit" id="search-cat-button">Szűrés</button>
+                </form>
+                <table class="cats-table">
+                    <thead>
+                        <tr>
+                            <th>Sorszám</th>
+                            <th>Név</th>
+                            <th>Származás</th>
+                            <th>Hossz</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
         </div>
     </main>
-<script src="/js/menu.js"></script>
-<script src="/js/macskak.js"></script>
+    <script src="/js/navigation.js"></script>
+    <script src="/js/macskak.js"></script>
 </body>
+
 </html>

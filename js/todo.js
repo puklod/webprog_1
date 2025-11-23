@@ -1,9 +1,9 @@
 class Card {
-    static currentCardsCount = 0;
+    static currentUndoneCardsCount = 0;
 
     constructor(text){
         this.container = document.createElement('div');
-        this.textField = document.createElement('span');
+        this.textField = document.createElement('h2');
         this.removeButton = document.createElement('button');
         this.checkButton = document.createElement('button');
 
@@ -12,10 +12,12 @@ class Card {
         this.setListeners();
         this.setTextFieldData(text);
         
-        Card.currentCardsCount++;
+        Card.currentUndoneCardsCount++;
     }
 
     init() {
+        this.removeButton.textContent = '\u2716'
+        this.checkButton.textContent = '\u2714'
         this.container.append(this.textField);
         this.container.append(this.removeButton);
         this.container.append(this.checkButton);
@@ -25,25 +27,33 @@ class Card {
         this.container.classList.add('todo-card');
         this.textField.classList.add('todo-card-text');
         this.removeButton.classList.add('remove-card-button');
-        this.checkButton.classList.add('todo-done-button');
+        this.checkButton.classList.add('check-card-button');
     }
 
     setListeners() {
         this.removeButton.addEventListener('click',() => this.removeEvent(this.container));
         this.checkButton.addEventListener('click',() => this.checkEvent(this.container));
     }
-
-    removeEvent(parentElement) {
-        parentElement.remove();
-        Card.currentCardsCount--;
-        modifyTodoTextRegion();
+     
+    removeEvent(removeableElement) {
+        removeableElement.remove();
+        Card.currentUndoneCardsCount--;
+        modifyCountTextRegion();
     }
 
     checkEvent(parentElement) {
+        this.setDoneStyle();
+
         for(let child of parentElement.childNodes){
             if(child.classList.contains("remove-card-button"))
-                child.remove();
+                this.removeEvent(child);
         }
+    }
+
+    setDoneStyle() {
+        this.container.style.setProperty('background',"#1a6f1a");
+        this.container.style.setProperty('color',"#cde1c8");
+        this.checkButton.style.setProperty('color','#cde1c8');
     }
 
     setTextFieldData(textFieldData) {
@@ -58,9 +68,9 @@ class Card {
 
 staticPageElements = {
     inputField: document.getElementById("input-todo"),
-    addCardForm: document.querySelector('main > .add-card-form'),
-    countText: document.querySelector('main > .todo-text-region > p'),
-    cardRegion: document.querySelector('main > .todo-card-region')
+    addCardForm: document.querySelector('main .add-card-form'),
+    countText: document.querySelector('main .todo-text-region > h1'),
+    cardRegion: document.querySelector('main .todo-card-region')
 }
 
 staticPageElements.addCardForm.addEventListener('submit',submitEvent);
@@ -77,7 +87,7 @@ function submitEvent(event) {
     {
         submitCard();
         clearInputField();
-        modifyTodoTextRegion();
+        modifyCountTextRegion();
     }
 }
 
@@ -106,6 +116,6 @@ function clearInputField() {
     staticPageElements.inputField.value = "";
 }
 
-function modifyTodoTextRegion() {
-    staticPageElements.countText.textContent = "Jelenleg " + Card.currentCardsCount +"db befejezetlen teendő van."
+function modifyCountTextRegion() {
+    staticPageElements.countText.textContent = `Jelenleg ${Card.currentUndoneCardsCount}db befejezetlen teendő van.`
 }

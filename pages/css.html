@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
-    <meta charset="UTF-8" >
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/common.css" >
-    <link rel="stylesheet" href="/css/navigation.css" >
-    <link rel="stylesheet" href="/css/css.css" >
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/css.css">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <title>Webprog 1 Beadandó</title>
 </head>
+
 <body>
     <header class="seven-column-grid">
         <span class="grid-third-column">Pukló Dániel</span>
         <span class="grid-fourth-column">BU4YEU</span>
     </header>
     <section id="hero" aria-labelledby="hero-title">
-        <div>
+        <div class="content">
             <h3 id="hero-title">Webprog 1 Beadandó</h3>
             <h4>"This is not farewell, this is only goodbye"</h4>
         </div>
@@ -23,35 +25,40 @@
     <nav>
     </nav>
     <main>
-        <div class="background">
-        <div class="input-wrapper">
-            <div class="confirmation-area">
-                <p class="confirmation-text">Valóban ezt szeretné?</p>
-                <button id="yes-button" type="button" value="yes">Igen</button>
-                <button id="back-button" type="button" value="no">Mégsem</button>
+        <div class="content">
+            <div class="left-side-background">
+                <div class="input-field">
+                    <div class="confirmation-area">
+                        <p class="confirmation-text">Valóban ezt szeretné?</p>
+                        <button id="yes-button" type="button" value="yes">Igen</button>
+                        <button id="back-button" type="button" value="no">Mégsem</button>
+                    </div>
+                    <div class="input-area-wrapper">
+                        <div class="input-area">
+                            <label for="input-translateX">V. Eltolás:</label>
+                            <input type="text" id="input-translateX" name="translateX" value="0">
+                            <label for="input-translateY">F. Eltolás:</label>
+                            <input type="text" id="input-translateY" name="translateY" value="0">
+                            <label for="input-rotate">Forgatás:</label>
+                            <input type="text" id="input-rotate" name="rotate" value="0">
+                            <label for="input-scale">Méretezés:</label>
+                            <input type="text" id="input-scale" name="scale" value="0">
+                            <label for="input-skewX">Ferdítés:</label>
+                            <input type="text" id="input-skewX" name="skewX" value="0">
+                        </div>
+                        <div class="button-area">
+                            <button type="button" id="reset-button" name="reset">Transzformációk törlése</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="input-field">
-                <label for="input-translateX">V. Eltolás:</label>
-                <input type="text" id="input-translateX" name="translateX" value="0">
-                <label for="input-translateY">F. Eltolás:</label>
-                <input type="text" id="input-translateY" name="translateY" value="0">
-                <label for="input-rotate">Forgatás:</label>
-                <input type="text" id="input-rotate" name="rotate" value="0">
-                <label for="input-scale">Méretezés:</label>
-                <input type="text" id="input-scale" name="scale" value="0">
-                <label for="input-skewX">Ferdítés:</label>
-                <input type="text" id="input-skewX" name="skewX" value="0">
-            </div>
-            <div class="button-area">
-                <button type="button" id="reset-button" name="reset">Transzformációk törlése</button>
-            </div>
-            </div>
-        </div>
             <div class="square-wrapper">
                 <div id="square"></div>
             </div>
+        </div>
     </main>
-<script src="/js/menu.js"></script>
-<script src="/js/css.js"></script>
+    <script src="/js/navigation.js"></script>
+    <script src="/js/css.js"></script>
 </body>
+
 </html>

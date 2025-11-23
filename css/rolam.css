@@ -1,36 +1,39 @@
-.content-type-one,
-.content-type-two {
+main > section:nth-child(even) {
+    background-color: aquamarine;
+}
+
+.type-one,
+.type-two {
     display: grid;
     grid-template-columns: 5% 45%  45% 5%;
     grid-template-rows: auto;
 }
 
-.content-type-one {
+.type-one {
     grid-template-areas: 
     ". image title ."
     ". image area-content .";
 }
 
-.content-type-two {
-    background-color: aquamarine;
+.type-two {
     grid-template-areas:
     ". title image ."
     ". area-content image .";
 }
 
-.content-type-one h2,
-.content-type-two h2 {
+.type-one h2,
+.type-two h2 {
     grid-area: title;
     align-content: end;
 }
 
-.content-type-one p,
-.content-type-two p {
+.type-one p,
+.type-two p {
     grid-area: area-content;    
 }
 
-.content-type-one img,
-.content-type-two img {
+.type-one img,
+.type-two img {
     grid-area: image;
     justify-self: center;
     align-self: center;

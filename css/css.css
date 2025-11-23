@@ -1,21 +1,56 @@
-main,
+@media(max-width: 890px){
+ #square {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(#56a0e1,#c12424);
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ .input-area {
+  display: grid;
+  grid-template-areas: ". text text .";
+  flex-direction: column;
+
+  align-items: center;
+  text-align: center;
+}
+.button-area {
+  text-align: center;
+  margin-top: 20px;
+}
+
+label {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.left-side-background{
+  margin-bottom: 30px;
+}
+}
+
+
+@media(min-width: 890px){
+  main > .content,
 .square-wrapper {
   height: 600px;
 }
 
-main {
+main > .content {
+  grid-column-end: 4;
   margin: 0;
   display: grid;
-  grid-template-columns: [first] 18% [second] auto;
+  grid-template-columns: [first] 200px 10% [second] auto;
   overflow: hidden;
 }
 
 .confirmation-area {
   position: absolute;
   z-index: 0;
-  background: red;
   width: 100%;
   height: 100%;
+  background: red;
   display: grid;
   grid-template-areas:
   ". text text ."
@@ -38,23 +73,35 @@ main {
   grid-area: button2;
 }
 
-.input-wrapper {
-  grid-column: first;
+.input-field {
   position: relative;
+  width: max-content;
 }
 
-.background {
+.left-side-background {
   height: 100dvh;
+}
+
+main,
+.left-side-background,
+.input-area-wrapper {
   background: wheat;
 }
 
-.input-field {
-  position: relative;
-  display: grid;
-  grid-template-columns: 30% [label] 20% [input] 20% 30%;
-  flex-direction: column;
-  background: gray;
+
+.input-area-wrapper {
+  padding-top: 20px;
   z-index: 1;
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.input-area {
+  display: grid;
+  grid-template-columns: [label] 100px [input] 100px;
+  flex-direction: column;
+
   align-items: center;
   text-align: center;
 }
@@ -66,6 +113,7 @@ main {
 .square-wrapper {
   grid-column: second;
   align-content: center;
+  background: white;
 }
 
 #square {
@@ -80,22 +128,28 @@ label {
   padding-top: 10px;
   padding-bottom: 10px;
   grid-column: label;
+  width: max-content;
 }
 
 input {
   height: 20px;
-  width: 100px;
   grid-column: input;
+  box-sizing: border-box;
 }
 
 .button-area{
   position: relative;
   text-align: center;
   z-index:1;
+  padding-top: 5px;
+      width: max-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .reset-button {
   width: max-content;
   margin-left: auto;
   margin-right: auto;
+}
 }

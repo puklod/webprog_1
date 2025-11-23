@@ -3,11 +3,11 @@ let searchQuery = url + "?";
 let lastQueryParams = "";
 let currentCatList;
 const mainField = document.querySelector('main');
-const catsField = document.querySelector('main > .cats-field');
-const catsTable = document.querySelector('main > .cats-field > .cats-table');
+const catsField = document.querySelector('main .cats-field');
+const catsTable = document.querySelector('main .cats-field > .cats-table');
 const nameInputField = document.getElementById('input-cat-name');
 const originInputField = document.getElementById('input-cat-origin');
-const catSearchForm = document.querySelector('main > .cats-field > .cat-search-form');
+const catSearchForm = document.querySelector('main .cats-field > .cat-search-form');
 const searchButton = document.getElementById('search-cat-button');
 let params = new URLSearchParams();
 
@@ -68,6 +68,9 @@ function readData(result) {
         let originCell = document.createElement('td');
         let nameCell = document.createElement('td');
         let removeButton = document.createElement('button');
+        let crossContainer = document.createElement('span');
+            crossContainer.textContent = "\u2716";
+            removeButton.append(crossContainer);
 
         if(toString(cat.id).length > 0){
             idCell.textContent = cat.id;
@@ -112,7 +115,7 @@ async function removeCatRow(excludedId){
         throw new Error(`Response status: ${response.status}`);
     }
 
-    document.querySelector("main > .cats-field > .cats-table tbody").remove();
+    document.querySelector("main .cats-field > .cats-table tbody").remove();
         if(lastQueryParams == "")
         {
             getCatsData(url);
@@ -158,7 +161,7 @@ function searchData(event){
 
     if(lastQueryParams !== params.toString()){
         lastQueryParams = params.toString();
-        document.querySelector("main > .cats-field >.cats-table tbody").remove();
+        document.querySelector("main .cats-field >.cats-table tbody").remove();
 
         if(params.toString() == "")
         {
