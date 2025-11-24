@@ -2,22 +2,35 @@ html {
     min-width: 350px;
 }
 
+@media(max-width: 650px) {
+
+    main:has(> .content),
+    main>section,
+    nav,
+    #hero {
+        display: grid;
+        grid-template-columns: 2% [content]94% 2%;
+    }
+}
+
+@media(min-width: 651px) {
 main:has(> .content),
-main > section,
+main>section,
 nav,
 #hero {
     display: grid;
     grid-template-columns: 15% [content]70% 15%;
 }
+}
 
-main > .content,
-main > section > .content {
+main>.content,
+main>section>.content {
     grid-column: content;
     margin: 0;
     padding: 0;
 }
 
-header{
+header {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -48,7 +61,7 @@ body {
     align-content: end;
 }
 
-#hero > .content {
+#hero>.content {
     margin: 20px 20px 20px 20px;
     grid-column: content;
 }
