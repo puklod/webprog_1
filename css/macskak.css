@@ -1,12 +1,24 @@
-.input {
-    width: 120px;
+@media(min-width:1350px) {
+  .cat-search-form {
+    grid-template-columns: 6% 22% 13% auto 3% 5%;
+  }
+
+  label {
+    font-size: 34px;
+  }
+  input {
+    width:237px;
+  }
+
+  table {
+  font-size: 30px;
 }
+}
+
 
 .cat-search-form {
-    display: grid;
-  grid-template-columns: 5% 26% 11% auto auto 5%;
+  display: grid;
 }
-
 #search-cat-button {
     width: 80px;
   margin-left: auto;

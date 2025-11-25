@@ -97,7 +97,7 @@ function inputErrorAction() {
 }
 
 function removeWarning() {
-    if(staticPageElements.inputField.validationMessage !== "")
+    if(staticPageElements.inputField.validity.customError == true)
            staticPageElements.inputField.setCustomValidity("");
 }
 

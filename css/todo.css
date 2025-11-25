@@ -1,3 +1,9 @@
+@media(max-width:525px) {
+    h1 {
+        font-size: 6vw;
+    }
+}
+
 @media(max-width: 772px) {
     .todo-card {
     grid-template-columns: [text] 80% [remove] 10% [check] 10%;
