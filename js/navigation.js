@@ -9,7 +9,7 @@ createNavigation();
 window.addEventListener("resize",switchMenuType);
 
 function setMenuType() {
-    if(window.outerWidth < 650)
+    if(window.innerWidth <= 651)
     {
         navigation.parentElement.classList.add("mobile");
         navigation.parentElement.classList.add("closed");
@@ -76,13 +76,13 @@ function manipulateMenu() {
 function switchMenuType() {
     let parentElement = navigation.parentElement;
 
-    if(window.outerWidth < 650 && parentElement.classList.contains("desktop"))
+    if(window.innerWidth <= 650 && parentElement.classList.contains("desktop"))
     {
         parentElement.classList.remove("desktop");
         parentElement.classList.add("mobile");
         parentElement.classList.add("closed");
     }
-    else if(window.outerWidth > 650 && parentElement.classList.contains("mobile"))
+    else if(window.innerWidth >= 651 && parentElement.classList.contains("mobile"))
     {
         parentElement.classList.remove("mobile");
         parentElement.classList.add("desktop");

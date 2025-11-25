@@ -1,11 +1,24 @@
 @media(max-width: 890px) {
 
-    main,
+  main > .content {
+        min-height: 700px;
+    grid-column-start: 1;
+    grid-column-end: 5;
+            display: grid;
+        grid-template-rows: 25% 75%;
+  }
+  
+  main,
   .left-side-background,
   .input-area-wrapper {
     background: wheat;
   }
 
+
+  .square-wrapper {
+    background: white;
+    align-content: center;
+  }
 
   #square {
     width: 100px;
@@ -101,9 +114,6 @@
     justify-self: center;
   }
 
-  .left-side-background {
-    margin-bottom: 30px;
-  }
 
     .button-area {
     position: relative;
@@ -111,8 +121,8 @@
     z-index: 1;
     padding-top: 5px;
     width: max-content;
-    margin-left: auto;
-    margin-right: auto;
+    justify-self: center;
+    padding-bottom: 20px;
   }
 
   .confirmation-area {

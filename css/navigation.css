@@ -27,6 +27,7 @@ nav > ul.opened {
 
 nav > ul > li {
     list-style: none;
+    border-right: 2px solid black;
 }
 
 nav > ul > li:not(.active):hover {
@@ -72,6 +73,12 @@ nav.mobile > ul {
 nav.mobile li {
     width: 100%;
     text-align: center;
+    border-bottom: 2px solid black;
+    border-right: none;
+}
+
+nav.mobile > ul > li:last-child{
+    border: none;
 }
 
 nav .line-one,

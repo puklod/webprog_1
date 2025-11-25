@@ -9,11 +9,21 @@ html {
     nav,
     #hero {
         display: grid;
-        grid-template-columns: 2% [content]94% 2%;
+        grid-template-columns: 2% [content]96% 2%;
     }
 }
 
 @media(min-width: 651px) {
+main:has(> .content),
+main>section,
+nav,
+#hero {
+    display: grid;
+    grid-template-columns: 5% [content]90% 5%;
+}
+}
+
+@media(min-width: 1300px) {
 main:has(> .content),
 main>section,
 nav,
@@ -53,7 +63,7 @@ body {
 
 #hero {
     height: 300px;
-    background-image: url("/images/hero_background_tmp.jpg");
+    background-image: url("/images/hero_background.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-color: #0b0803;

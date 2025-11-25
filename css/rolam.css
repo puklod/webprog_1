@@ -1,43 +1,101 @@
-main > section:nth-child(even) {
-    background-color: aquamarine;
+@media(max-width: 899px) {
+    main>section:nth-child(even) {
+        background-color: aquamarine;
+    }
+
+    .type-one,
+    .type-two {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: [title] auto [area-content] auto [image] auto;
+    }
+
+    .type-one h2,
+    .type-two h2 {
+        grid-area: title;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .type-one p,
+    .type-two p {
+        grid-area: area-content;
+        text-align: justify;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .type-one img,
+    .type-two img {
+        grid-area: image;
+        justify-self: center;
+        align-self: center;
+        max-height: 300px;
+        padding: 10px;
+        max-width: 100%;
+    }
 }
 
-.type-one,
-.type-two {
-    display: grid;
-    grid-template-columns: 5% 45%  45% 5%;
-    grid-template-rows: auto;
+@media(min-width: 900px) {
+
+    main>section:nth-child(even) {
+        background-color: aquamarine;
+    }
+
+    .type-one,
+    .type-two {
+        display: grid;
+        grid-template-rows: auto;
+    }
+
+    .type-one {
+        grid-template-columns: 35% 65%;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "image title"
+            "image area-content";
+    }
+
+    .type-two {
+        grid-template-columns: 65% 35%;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "title title"
+            "area-content image";
+    }
+
+    .type-one h2,
+    .type-two h2 {
+        grid-area: title;
+        align-content: end;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .type-one p,
+    .type-two p {
+        grid-area: area-content;
+        text-align: justify;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .type-one img,
+    .type-two img {
+        grid-area: image;
+        justify-self: center;
+        align-self: center;
+        max-height: 300px;
+        padding: 10px;
+        max-width: 100%;
+    }
+
 }
 
-.type-one {
-    grid-template-areas: 
-    ". image title ."
-    ". image area-content .";
+@media(min-width: 1097px) {
+        .type-two {
+        grid-template-areas:
+                "title image"
+            "area-content image";
 }
-
-.type-two {
-    grid-template-areas:
-    ". title image ."
-    ". area-content image .";
-}
-
-.type-one h2,
-.type-two h2 {
-    grid-area: title;
-    align-content: end;
-}
-
-.type-one p,
-.type-two p {
-    grid-area: area-content;    
-}
-
-.type-one img,
-.type-two img {
-    grid-area: image;
-    justify-self: center;
-    align-self: center;
-    max-height: 300px;
-    padding: 10px;
-}
-
+    }
