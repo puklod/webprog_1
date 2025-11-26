@@ -5,8 +5,8 @@ const navigation = {
 
 setMenuType();
 
-window.addEventListener("resize",switchMenuType);
-navigation.button.addEventListener("click",manipulateMenu);
+window.addEventListener('resize',switchMenuType);
+navigation.button.addEventListener('click',manipulateMenu);
 
 function setMenuType() {
     if(window.innerWidth <= 651)

@@ -53,7 +53,7 @@ function createTable(result) {
         let nameCell = document.createElement('td');
         let removeButton = document.createElement('button');
         let crossContainer = document.createElement('span');
-            crossContainer.textContent = "\u2716";
+            crossContainer.textContent = '\u2716';
             removeButton.append(crossContainer);
 
         if(toString(cat.id).length > 0){
@@ -94,21 +94,21 @@ function searchData(event){
 
     if(searchedCatName.trim().length > 0 && searchedCatOrigin.trim().length > 0)
     {
-        params.append("name",searchedCatName);
-        params.append("origin",searchedCatOrigin);
+        params.append('name',searchedCatName);
+        params.append('origin',searchedCatOrigin);
     }
     else if (searchedCatName.trim().length > 0)
     {
-        params.append("name",searchedCatName);
+        params.append('name',searchedCatName);
     }
     else if(searchedCatOrigin.trim().length > 0)
     {
-        params.append("origin",searchedCatOrigin);
+        params.append('origin',searchedCatOrigin);
     }
 
     if(lastQueryParams !== params.toString()){
         lastQueryParams = params.toString();
-        document.querySelector("main .cats-field >.cats-table tbody").remove();
+        document.querySelector('main .cats-field >.cats-table tbody').remove();
 
         if(params.toString() == "")
         {
@@ -125,9 +125,9 @@ function searchData(event){
 }
 
 function clearParams() {
-    params.delete("id");
-    params.delete("name");
-    params.delete("origin");
+    params.delete('id');
+    params.delete('name');
+    params.delete('origin');
 }
 
 async function removeCatRow(excludedId){
@@ -149,7 +149,7 @@ async function removeCatRow(excludedId){
         throw new Error(`Response status: ${response.status}`);
     }
 
-    document.querySelector("main .cats-field > .cats-table tbody").remove();
+    document.querySelector('main .cats-field > .cats-table tbody').remove();
     if(lastQueryParams == "")
     {
         getCatsData(url);

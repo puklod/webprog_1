@@ -1,24 +1,24 @@
 let transformString = "";
-let confirmArea = document.querySelector("main .confirmation-area");
-let inputAreaWrapper = document.querySelector("main .input-area-wrapper");
-let backButton = document.getElementById("back-button");
-let confirmButton = document.getElementById("yes-button")
-let resetButton = document.getElementById("reset-button");
-let square = document.getElementById("square");
+let confirmArea = document.querySelector('main .confirmation-area');
+let inputAreaWrapper = document.querySelector('main .input-area-wrapper');
+let backButton = document.getElementById('back-button');
+let confirmButton = document.getElementById('yes-button')
+let resetButton = document.getElementById('reset-button');
+let square = document.getElementById('square');
 
 
 /*Eventlistenerek hozzáadása*/
 resetButton.addEventListener('click',showConfirmArea);
 backButton.addEventListener('click',hideConfirmArea);
 confirmButton.addEventListener('click',resetValues);
-document.addEventListener("input",() => transformSquare(document.activeElement));
+document.addEventListener('input',() => transformSquare(document.activeElement));
 
 /*Az oldal betöltésekor visszaállít mindent alapra*/
 resetValues();
 
 /*A html-ben az inputok neveinek a transform tulajdonságot adtam, ezekkel dolgozom*/
 function transformSquare(element) {
-    let transformProperty = element.getAttribute("name");
+    let transformProperty = element.getAttribute('name');
     let value = getElementValue(element);
 
     setTransformString(transformProperty,value);
@@ -82,7 +82,7 @@ function getMeasurement(name) {
 /*Ez a függvény hívódik meg utoljára, beállítva a transform propertyt*/
 function setTransformProperty(transformString,value) {
     if(isNaN(value) === false && value.length > 0){
-        square.style.setProperty("transform",transformString);
+        square.style.setProperty('transform',transformString);
     }
 }
 
@@ -97,12 +97,11 @@ function resetValues() {
 }
 
 function hideConfirmArea() {
-    inputAreaWrapper.style.setProperty("opacity","1");
-    confirmArea.style.setProperty("z-index",0);
+    inputAreaWrapper.style.setProperty('opacity','1');
+    confirmArea.style.setProperty('z-index','0');
 }
 
 function showConfirmArea() {
-    inputAreaWrapper.style.setProperty("opacity","0");
-    confirmArea.style.setProperty("z-index",2);
-
+    inputAreaWrapper.style.setProperty('opacity','0');
+    confirmArea.style.setProperty('z-index','2');
 }

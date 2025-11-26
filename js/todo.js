@@ -52,8 +52,8 @@ class Card {
     }
 
     setDoneStyle() {
-        this.container.style.setProperty('background',"#1a6f1a");
-        this.container.style.setProperty('color',"#cde1c8");
+        this.container.style.setProperty('background','#1a6f1a');
+        this.container.style.setProperty('color','#cde1c8');
         this.checkButton.style.setProperty('color','#cde1c8');
     }
 
@@ -68,7 +68,7 @@ class Card {
 }
 
 staticPageElements = {
-    inputField: document.getElementById("input-todo"),
+    inputField: document.getElementById('input-todo'),
     addCardForm: document.querySelector('main .add-card-form'),
     countText: document.querySelector('main .todo-text-region > h1'),
     cardRegion: document.querySelector('main .todo-card-region')
