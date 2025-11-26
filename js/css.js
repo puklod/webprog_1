@@ -6,14 +6,17 @@ let confirmButton = document.getElementById("yes-button")
 let resetButton = document.getElementById("reset-button");
 let square = document.getElementById("square");
 
+
+/*Eventlistenerek hozzáadása*/
 resetButton.addEventListener('click',showConfirmArea);
 backButton.addEventListener('click',hideConfirmArea);
 confirmButton.addEventListener('click',resetValues);
-
-
-resetValues();
 document.addEventListener("input",() => transformSquare(document.activeElement));
 
+/*Az oldal betöltésekor visszaállít mindent alapra*/
+resetValues();
+
+/*A html-ben az inputok neveinek a transform tulajdonságot adtam, ezekkel dolgozom*/
 function transformSquare(element) {
     let transformProperty = element.getAttribute("name");
     let value = getElementValue(element);
@@ -22,6 +25,7 @@ function transformSquare(element) {
     setTransformProperty(transformString,value);
 }
 
+/*Ha mindent kitörlünk a mezőből, akkor is legyen értéke*/
 function getElementValue(element) {
     if(element.value.length < 1)
     {
@@ -33,6 +37,7 @@ function getElementValue(element) {
     }
 }
 
+/*Itt fűzögetem össze azt a string-et, amit később beállítok transfrom tulajdonságnak*/
 function setTransformString(transformProperty,value) {
     let measurement = getMeasurement(transformProperty);
     let pattern = transformProperty + "\\(.*\\)";
@@ -52,6 +57,8 @@ function setTransformString(transformProperty,value) {
     }
 }
 
+
+/*Visszaadja milyen egység kell a szám után, az adott tulajdonság esetében*/
 function getMeasurement(name) {
 
     if(name.includes("rotate") || name.includes("skewX")){
@@ -67,6 +74,8 @@ function getMeasurement(name) {
     }
 }
 
+
+/*Ez a függvény hívódik meg utoljára, beállítva a transform propertyt*/
 function setTransformProperty(transformString,value) {
     if(isNaN(value) === false && value.length > 0){
         square.style.setProperty("transform",transformString);

@@ -1,3 +1,4 @@
+/* A kártyákat egységesnek gondolom, ezért lett végül osztály belőle */
 class Card {
     static currentUndoneCardsCount = 0;
 
@@ -73,6 +74,7 @@ staticPageElements = {
     cardRegion: document.querySelector('main .todo-card-region')
 }
 
+/* Eventlistenerek hozzáadása */
 staticPageElements.addCardForm.addEventListener('submit',submitEvent);
 staticPageElements.inputField.addEventListener('input',removeWarning);
 

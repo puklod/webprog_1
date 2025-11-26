@@ -1,26 +1,36 @@
 form {
-    margin-left: 5%;
+  margin-left: 5%;
+}
+
+label {
+  font-size: 20px;
+}
+
+input {
+  width: 126px;
+}
+
+table {
+  margin-top: 10px;
+  font-size: 24px;
+}
+
+#search-cat-button {
+  width: 80px;
+  margin-left: auto;
+
 }
 
 .cat-search-form {
   display: grid;
 }
-#search-cat-button {
-    width: 80px;
-  margin-left: auto;
-
-}
 
 .cats-field {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .cats-table {
-    width: 100%;
-}
-
-table {
-  margin-top: 10px;
+  width: 100%;
 }
 
 .error {
@@ -33,104 +43,91 @@ table {
 }
 
 @media(max-width: 550px) {
-  .cat-search-form {
-        grid-template-rows: 18%;
-    align-items: center;
-    align-content: center;
-    row-gap: 5px;
-  }
-
-  label {
-    font-size: 20px;
-  }
   input {
     width: 200px;
   }
 
   table {
-  font-size: 20px;
-}
+    font-size: 20px;
+  }
 
-#search-cat-button {
-  margin-left: 0;
-  margin-right: auto;
-}
+  #search-cat-button {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .cat-search-form {
+    grid-template-rows: 18%;
+    align-items: center;
+    align-content: center;
+    row-gap: 5px;
+  }
+
 }
 
 @media(max-width: 549px) {
   table {
     text-align: center;
-  font-size: 15px;
-}
+    font-size: 15px;
+  }
 
 }
 
 
 @media(min-width: 551px) {
+  table {
+    font-size: 20px;
+    text-align: left;
+  }
+
   .cat-search-form {
     grid-template-columns: 46px 138px 95px auto auto 5%;
   }
-
-  label {
-    font-size: 20px;
-  }
-  input {
-    width: 126px;
-  }
-
-  table {
-  font-size: 20px;
-      text-align: left;
-}
 }
 
 @media(min-width:650px) {
+  table {
+    font-size: 20px;
+  }
+
   .cat-search-form {
     grid-template-columns: 44px 141px 96px auto auto 5%
   }
 
-  label {
-    font-size: 20px;
-  }
-  input {
-    width: 126px;
-  }
 
-  table {
-  font-size: 20px;
-}
+
 }
 
 @media(min-width:760px) {
+  label {
+    font-size: 25px;
+  }
+
+  input {
+    width: 158px;
+  }
+
   .cat-search-form {
     grid-template-columns: 57px 182px 122px auto auto 5%;
   }
 
-  label {
-    font-size: 25px;
-  }
-  input {
-    width:158px;
-  }
 
-  table {
-  font-size: 24px;
-}
+
 }
 
 @media(min-width:1050px) {
+  label {
+    font-size: 28px;
+  }
+
+  input {
+    width: 237px;
+  }
+
   .cat-search-form {
     grid-template-columns: 63px 259px 144px auto auto 5%;
   }
 
-  label {
-    font-size: 28px;
-  }
-  input {
-    width:237px;
-  }
 
-  table {
-  font-size: 24px;
-}
+
 }

@@ -3,7 +3,7 @@ nav {
     display: grid;
 }
 
-nav > ul {
+nav>ul {
     display: flex;
     padding: 0;
     margin: 0;
@@ -11,51 +11,48 @@ nav > ul {
     grid-column: content;
 }
 
-nav.mobile > ul {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-nav.closed > ul {
-    display: none;
-}
-
-nav > ul.opened {
-    display: flex;
-    align-items: center;
-}
-
-nav > ul > li {
+nav>ul>li {
     list-style: none;
     border-right: 2px solid black;
 }
 
-nav > ul > li:not(.active):hover {
+nav>ul>li:not(.active):hover {
     background: #a47c17;
 }
 
-nav > ul > li:not(.active):hover > a {
+nav>ul>li:not(.active):hover>a {
     color: wheat;
 }
 
-nav > ul > li.active {
+nav>ul>li.active {
     background: #ffd66e;
 }
 
-nav > ul > li > a {
+nav>ul>li>a {
     text-decoration: none;
     padding: 10px;
     display: block;
     color: black;
     font-family: "Helvetica", Verdana;
-     font-weight: bold;
+    font-weight: bold;
 }
 
-nav.desktop > button {
+nav.desktop>button {
     display: none;
 }
 
-nav.mobile > button {
+/* MOBILESZKÖZÖK BEÁLLÍTÁSA*/
+
+nav.closed>ul {
+    display: none;
+}
+
+nav>ul.opened {
+    display: flex;
+    align-items: center;
+}
+
+nav.mobile>button {
     grid-column: content;
     background: none;
     border: none;
@@ -65,7 +62,9 @@ nav.mobile > button {
     padding: 20px;
 }
 
-nav.mobile > ul {
+nav.mobile>ul {
+    margin-left: auto;
+    margin-right: auto;
     flex-direction: column;
     align-items: center;
 }
@@ -77,16 +76,16 @@ nav.mobile li {
     border-right: none;
 }
 
-nav.mobile > ul > li:last-child{
+nav.mobile>ul>li:last-child {
     border: none;
 }
 
 nav .line-one,
 nav .line-two {
-       font-size: 30px;
-       display: flex;
-       height: 10px;
-       align-items: center;
+    font-size: 30px;
+    display: flex;
+    height: 10px;
+    align-items: center;
 }
 
 nav.mobile.opened .line-one {

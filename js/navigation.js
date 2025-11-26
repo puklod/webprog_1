@@ -35,7 +35,6 @@ function manipulateMenu() {
     }
 }
 
-
 function switchMenuType() {
     let parentElement = navigation.parentElement;
 
@@ -53,6 +52,11 @@ function switchMenuType() {
         parentElement.classList.remove("closed");
     }   
 }
+
+
+
+/* Normál esetben generáltatnám a menüt, de úgy nem lesz teljesértékű forráskód. Erre utólag jöttem rá, az eredeti logikát
+lent lehet látni. */
 
 
 /*

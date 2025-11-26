@@ -1,32 +1,18 @@
-@media(max-width:525px) {
-    h1 {
-        font-size: 6vw;
-    }
-}
-
-@media(max-width: 772px) {
-    .todo-card {
-    grid-template-columns: [text] 80% [remove] 10% [check] 10%;
-    }
-}
-
-@media(min-width: 773px) {
-    .todo-card {
-    grid-template-columns: [text] 90% [remove] 5% [check] 5%;
-    }
-}
-
-main > .content {
+main>.content {
     margin-top: 30px;
+}
+
+button {
+    width: max-content;
+}
+
+#input-todo {
+    margin-right: 15px;
 }
 
 .add-card-form {
     display: grid;
     grid-template-columns: 70% 10%;
-}
-
-#input-todo {
-    margin-right: 15px;
 }
 
 .todo-card {
@@ -63,6 +49,21 @@ main > .content {
     grid-column: check;
 }
 
-button {
-    width: max-content;
+
+@media(max-width:525px) {
+    h1 {
+        font-size: 6vw;
+    }
+}
+
+@media(max-width: 772px) {
+    .todo-card {
+        grid-template-columns: [text] 80% [remove] 10% [check] 10%;
+    }
+}
+
+@media(min-width: 773px) {
+    .todo-card {
+        grid-template-columns: [text] 90% [remove] 5% [check] 5%;
+    }
 }

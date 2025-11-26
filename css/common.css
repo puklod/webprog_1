@@ -29,14 +29,6 @@ body {
     padding: 0;
 }
 
-.grid-third-column {
-    grid-column: third;
-}
-
-.grid-fourth-column {
-    grid-column: fourth;
-}
-
 #hero {
     height: 300px;
     background-image: url("/images/hero_background.jpg");
@@ -56,6 +48,14 @@ body {
 #hero div h4 {
     margin: 0;
     padding: 2px;
+}
+
+.grid-third-column {
+    grid-column: third;
+}
+
+.grid-fourth-column {
+    grid-column: fourth;
 }
 
 @media(max-width: 650px) {
