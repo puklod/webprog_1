@@ -40,16 +40,20 @@ function getElementValue(element) {
 /*Itt fűzögetem össze azt a string-et, amit később beállítok transfrom tulajdonságnak*/
 function setTransformString(transformProperty,value) {
     let measurement = getMeasurement(transformProperty);
-    let pattern = transformProperty + "\\(.*\\)";
+    let pattern = transformProperty + "\\(.*?\\)";
     let regex = new RegExp(pattern);
 
         if(transformString === "")
     {
         transformString = transformProperty + "(" + value + measurement + ")";
+        console.log(1)
     }
     else if(transformString.match(regex) !== null)
     {
+        console.log(transformString)
+        console.log(regex)
         transformString = transformString.replace(regex,transformProperty + "(" + value + measurement + ")");
+        console.log(transformString)
     }
     else
     {

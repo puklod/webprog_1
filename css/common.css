@@ -19,6 +19,8 @@ main>section>.content {
 header {
     padding-top: 10px;
     padding-bottom: 10px;
+    background: #ffeacc;
+    font-weight: bold;
     text-align: center;
     display: grid;
     grid-template-columns: 15% 5% [third] 60% [fourth] 5% 15%;
@@ -35,7 +37,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-color: #0b0803;
-    color: rgb(191, 203, 214);
+    color: rgb(238, 241, 239);
     align-content: end;
 }
 

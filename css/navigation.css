@@ -1,5 +1,5 @@
 nav {
-    background-color: goldenrod;
+    background-color: #ffeacc;
     display: grid;
 }
 
@@ -25,7 +25,7 @@ nav>ul>li:not(.active):hover>a {
 }
 
 nav>ul>li.active {
-    background: #ffd66e;
+    background: #cecae7;
 }
 
 nav>ul>li>a {
