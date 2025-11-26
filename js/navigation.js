@@ -1,12 +1,12 @@
 const navigation = {
     parentElement: document.querySelector('body > nav'),
-    menuLabels: ["Rólam","CSS","TODO","Macskák"],
-    hrefs: ["/index.html","/pages/css.html","/pages/todo.html","/pages/macskak.html"],
+    button: document.querySelector('body > nav button'),
 }
 
 setMenuType();
-createNavigation();
+
 window.addEventListener("resize",switchMenuType);
+navigation.button.addEventListener("click",manipulateMenu);
 
 function setMenuType() {
     if(window.innerWidth <= 651)
@@ -18,43 +18,6 @@ function setMenuType() {
     {
         navigation.parentElement.classList.add("desktop");
     }
-}
-
-function createNavigation() {
-    let parentElement = navigation.parentElement;
-    let button = createMenuButton();
-    let ul = document.createElement('ul');
-
-    for(let i=0; i<navigation.menuLabels.length; i++){
-        let isCurrentPage = document.URL.includes(navigation.hrefs[i]);
-        let a = document.createElement('a');
-                        a.setAttribute("href",navigation.hrefs[i]);
-                        a.append(navigation.menuLabels[i]);
-        let li = document.createElement('li');
-                        li.append(a);
-        if(isCurrentPage)
-                        li.classList.add("active");
-        ul.append(li);
-    }
-
-    parentElement.append(button);
-    parentElement.append(ul);
-}
-
-function createMenuButton() {
-    let lineOne = document.createElement('span');
-                  lineOne.textContent = "\u2015";
-                  lineOne.classList.add('line-one');
-    let lineTwo = document.createElement('span');
-                  lineTwo.textContent = "\u2015";
-                  lineTwo.classList.add('line-two');
-    let menuButton = document.createElement('button');
-             menuButton.classList.add("button")
-             menuButton.append(lineOne);
-             menuButton.append(lineTwo);
-             menuButton.addEventListener('click',manipulateMenu);
-
-    return menuButton;
 }
 
 function manipulateMenu() {
@@ -90,3 +53,51 @@ function switchMenuType() {
         parentElement.classList.remove("closed");
     }   
 }
+
+
+/*
+const navigation = {
+    parentElement: document.querySelector('body > nav'),
+    menuLabels: ["Rólam","CSS","TODO","Macskák"],
+    hrefs: ["/index.html","/pages/css.html","/pages/todo.html","/pages/macskak.html"],
+}
+
+createNavigation();
+
+function createNavigation() {
+    let parentElement = navigation.parentElement;
+    let button = createMenuButton();
+    let ul = document.createElement('ul');
+
+    for(let i=0; i<navigation.menuLabels.length; i++){
+        let isCurrentPage = document.URL.includes(navigation.hrefs[i]);
+        let a = document.createElement('a');
+                        a.setAttribute("href",navigation.hrefs[i]);
+                        a.append(navigation.menuLabels[i]);
+        let li = document.createElement('li');
+                        li.append(a);
+        if(isCurrentPage)
+                        li.classList.add("active");
+        ul.append(li);
+    }
+
+    parentElement.append(button);
+    parentElement.append(ul);
+}
+
+
+function createMenuButton() {
+    let lineOne = document.createElement('span');
+                  lineOne.textContent = "\u2015";
+                  lineOne.classList.add('line-one');
+    let lineTwo = document.createElement('span');
+                  lineTwo.textContent = "\u2015";
+                  lineTwo.classList.add('line-two');
+    let menuButton = document.createElement('button');
+             menuButton.append(lineOne);
+             menuButton.append(lineTwo);
+             menuButton.addEventListener('click',manipulateMenu);
+
+    return menuButton;
+}
+*/

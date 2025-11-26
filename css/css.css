@@ -1,13 +1,13 @@
 @media(max-width: 890px) {
 
-  main > .content {
-        min-height: 700px;
+  main>.content {
+    min-height: 700px;
     grid-column-start: 1;
     grid-column-end: 5;
-            display: grid;
-        grid-template-rows: 25% 75%;
+    display: grid;
+    grid-template-rows: 25% 75%;
   }
-  
+
   main,
   .left-side-background,
   .input-area-wrapper {
@@ -28,17 +28,18 @@
     margin-right: auto;
   }
 
-    .input-field {
+  .input-field {
     position: relative;
   }
 
-    .input-area-wrapper {
+  .input-area-wrapper {
     padding-top: 20px;
     z-index: 1;
     position: relative;
     opacity: 1;
     transition: opacity 0.5s;
   }
+
   .input-area {
     display: grid;
     align-items: center;
@@ -56,53 +57,53 @@
     grid-row: label;
   }
 
-  .input-area > :nth-child(1){
+  .input-area> :nth-child(1) {
     grid-column: 1;
     grid-row: 1;
   }
 
-  .input-area > :nth-child(2){
+  .input-area> :nth-child(2) {
     grid-column: 1;
     grid-row: 2;
   }
 
-    .input-area > :nth-child(3){
+  .input-area> :nth-child(3) {
     grid-column: 2;
     grid-row: 1;
   }
 
-  .input-area > :nth-child(4){
+  .input-area> :nth-child(4) {
     grid-column: 2;
     grid-row: 2;
   }
 
-      .input-area > :nth-child(5){
+  .input-area> :nth-child(5) {
     grid-column: 1;
     grid-row: 3;
   }
 
-  .input-area > :nth-child(6){
+  .input-area> :nth-child(6) {
     grid-column: 1;
     grid-row: 4;
   }
 
-        .input-area > :nth-child(7){
+  .input-area> :nth-child(7) {
     grid-column: 2;
     grid-row: 3;
   }
 
-  .input-area > :nth-child(8){
+  .input-area> :nth-child(8) {
     grid-column: 2;
     grid-row: 4;
   }
 
-          .input-area > :nth-child(9){
+  .input-area> :nth-child(9) {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row: 5;
   }
 
-  .input-area > :nth-child(10){
+  .input-area> :nth-child(10) {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row: 6;
@@ -115,7 +116,7 @@
   }
 
 
-    .button-area {
+  .button-area {
     position: relative;
     text-align: center;
     z-index: 1;
@@ -138,125 +139,126 @@
 }
 
 
-@media(min-width: 890px){
-  main > .content,
-.square-wrapper {
-  height: 600px;
-}
+@media(min-width: 890px) {
 
-main > .content {
-  grid-column-end: 4;
-  margin: 0;
-  display: grid;
-  grid-template-columns: [first] 200px 10% [second] auto;
-  overflow: hidden;
-}
+  main>.content,
+  .square-wrapper {
+    height: 600px;
+  }
 
-.confirmation-area {
-  position: absolute;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  background: red;
-  display: grid;
-  grid-template-areas:
-  ". text text ."
-  ". button1 button2 ."
-  ". . . .";
-}
+  main>.content {
+    grid-column-end: 4;
+    margin: 0;
+    display: grid;
+    grid-template-columns: [first] 200px 10% [second] auto;
+    overflow: hidden;
+  }
 
-.confirmation-text {
-  grid-area: text;
-  align-content: center;
-  margin-left: auto;
-  margin-right: auto;
-}
+  .confirmation-area {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background: red;
+    display: grid;
+    grid-template-areas:
+      ". text text ."
+      ". button1 button2 ."
+      ". . . .";
+  }
 
-#yes-button {
-  grid-area: button1;
-}
-
-#back-button {
-  grid-area: button2;
-}
-
-.input-field {
-  position: relative;
-  width: max-content;
-}
-
-.left-side-background {
-  height: 100dvh;
-}
-
-main,
-.left-side-background,
-.input-area-wrapper {
-  background: wheat;
-}
-
-
-.input-area-wrapper {
-  padding-top: 20px;
-  z-index: 1;
-  position: relative;
-  opacity: 1;
-  transition: opacity 0.5s;
-}
-
-.input-area {
-  display: grid;
-  grid-template-columns: [label] 100px [input] 100px;
-  flex-direction: column;
-
-  align-items: center;
-  text-align: center;
-}
-
-#reset-button {
-  grid-column: button;
-}
-
-.square-wrapper {
-  grid-column: second;
-  align-content: center;
-  background: white;
-}
-
-#square {
-  width: 100px;
-  height: 100px;
-  background: linear-gradient(#56a0e1,#c12424);
-  margin-left: auto;
-  margin-right: auto;
-}
-
-label {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  grid-column: label;
-  width: max-content;
-}
-
-input {
-  height: 20px;
-  grid-column: input;
-  box-sizing: border-box;
-}
-
-.button-area{
-  position: relative;
-  text-align: center;
-  z-index:1;
-  padding-top: 5px;
-      width: max-content;
+  .confirmation-text {
+    grid-area: text;
+    align-content: center;
     margin-left: auto;
     margin-right: auto;
-}
+  }
 
-.reset-button {
-  width: max-content;
-  margin-left: auto;
-  margin-right: auto;
-}
+  #yes-button {
+    grid-area: button1;
+  }
+
+  #back-button {
+    grid-area: button2;
+  }
+
+  .input-field {
+    position: relative;
+    width: max-content;
+  }
+
+  .left-side-background {
+    height: 100dvh;
+  }
+
+  main,
+  .left-side-background,
+  .input-area-wrapper {
+    background: wheat;
+  }
+
+
+  .input-area-wrapper {
+    padding-top: 20px;
+    z-index: 1;
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+
+  .input-area {
+    display: grid;
+    grid-template-columns: [label] 100px [input] 100px;
+    flex-direction: column;
+
+    align-items: center;
+    text-align: center;
+  }
+
+  #reset-button {
+    grid-column: button;
+  }
+
+  .square-wrapper {
+    grid-column: second;
+    align-content: center;
+    background: white;
+  }
+
+  #square {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(#56a0e1, #c12424);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  label {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    grid-column: label;
+    width: max-content;
+  }
+
+  input {
+    height: 20px;
+    grid-column: input;
+    box-sizing: border-box;
+  }
+
+  .button-area {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    padding-top: 5px;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .reset-button {
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

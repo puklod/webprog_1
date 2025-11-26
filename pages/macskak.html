@@ -23,15 +23,25 @@
         </div>
     </section>
     <nav>
+        <button type="button" id="menu-button" name="menu-button">
+            <span class="line-one">&horbar;</span>
+            <span class="line-two">&horbar;</span>
+        </button>
+        <ul>
+            <li><a href="/index.html">Rólam</a></li>
+            <li><a href="/pages/css.html">CSS</a></li>
+            <li><a href="/pages/todo.html">TODO</a></li>
+            <li class="active"><a href="/pages/macskak.html">Macskák</a></li>
+        </ul>
     </nav>
     <main>
         <div class="content">
             <div class="cats-field">
                 <form class="cat-search-form">
-                    <label for="input-catName">Név:</label>
-                    <input type="text" id="input-cat-name" class="input" name="name">
-                    <label for="input-catOrigin">Származás:</label>
-                    <input type="text" id="input-cat-origin" class="input" name="origin">
+                    <label for="input-cat-name">Név:</label>
+                    <input type="text" id="input-cat-name" class="input" name="cat-name">
+                    <label for="input-cat-origin">Származás:</label>
+                    <input type="text" id="input-cat-origin" class="input" name="cat-origin">
                     <button type="submit" id="search-cat-button">Szűrés</button>
                 </form>
                 <table class="cats-table">

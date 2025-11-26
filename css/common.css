@@ -2,48 +2,24 @@ html {
     min-width: 350px;
 }
 
-@media(max-width: 650px) {
-
-    main:has(> .content),
-    main>section,
-    nav,
-    #hero {
-        display: grid;
-        grid-template-columns: 2% [content]96% 2%;
-    }
-}
-
-@media(min-width: 651px) {
 main:has(> .content),
 main>section,
 nav,
 #hero {
     display: grid;
-    grid-template-columns: 5% [content]90% 5%;
-}
-}
-
-@media(min-width: 1300px) {
-main:has(> .content),
-main>section,
-nav,
-#hero {
-    display: grid;
-    grid-template-columns: 15% [content]70% 15%;
-}
 }
 
 main>.content,
 main>section>.content {
-    grid-column: content;
     margin: 0;
     padding: 0;
+    grid-column: content;
 }
 
 header {
-    text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
+    text-align: center;
     display: grid;
     grid-template-columns: 15% 5% [third] 60% [fourth] 5% 15%;
 }
@@ -78,6 +54,36 @@ body {
 
 #hero div h3,
 #hero div h4 {
-    padding: 2px;
     margin: 0;
+    padding: 2px;
+}
+
+@media(max-width: 650px) {
+
+    main:has(> .content),
+    main>section,
+    nav,
+    #hero {
+        grid-template-columns: 2% [content]96% 2%;
+    }
+}
+
+@media(min-width: 651px) {
+
+    main:has(> .content),
+    main>section,
+    nav,
+    #hero {
+        grid-template-columns: 5% [content]90% 5%;
+    }
+}
+
+@media(min-width: 1300px) {
+
+    main:has(> .content),
+    main>section,
+    nav,
+    #hero {
+        grid-template-columns: 15% [content]70% 15%;
+    }
 }

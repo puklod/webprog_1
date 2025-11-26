@@ -2,7 +2,7 @@ const url = "http://localhost:3000/cats";
 let searchQuery = url + "?";
 let lastQueryParams = "";
 let currentCatList;
-const mainField = document.querySelector('main');
+const contentField = document.querySelector('main > .content');
 const catsField = document.querySelector('main .cats-field');
 const catsTable = document.querySelector('main .cats-field > .cats-table');
 const nameInputField = document.getElementById('input-cat-name');
@@ -35,11 +35,11 @@ async function getCatsData(query) {
     catch(error)
     {
         console.error(error.message);
-        let span = document.createElement('span');
-            span.textContent = "Adatbázishiba";
-            span.classList.add("error-string");
+        let p = document.createElement('p');
+            p.textContent = "Adatbázishiba";
+            p.classList.add("error-string");
 
-        mainField.append(span);
+        contentField.append(p);
         catsField.classList.add('error');
     }
 }
@@ -130,11 +130,11 @@ async function removeCatRow(excludedId){
     }
     catch(error) {
         console.error(error.message);
-        let span = document.createElement('span');
-            span.textContent = "Adatbázishiba";
-            span.classList.add("error-string");
+        let p = document.createElement('p');
+            p.textContent = "Adatbázishiba";
+            p.classList.add("error-string");
 
-        mainField.append(span);
+        contentField.append(p);
         catsField.classList.add('error');
     }
 }
