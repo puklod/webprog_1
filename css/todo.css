@@ -23,7 +23,9 @@ button {
     align-items: center;
     height: max-content;
     align-content: center;
-    background: red;
+    background: rgb(236, 5, 5);
+    border-radius: 6px;
+    box-shadow: 2px 2px 2px 1px #b3a6a6;
 }
 
 .todo-card-text {
