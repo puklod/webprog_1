@@ -60,6 +60,12 @@ body {
     grid-column: fourth;
 }
 
+@media(max-width: 514px) {
+    #hero {
+        background-size: 100%;
+    }
+}
+
 @media(max-width: 650px) {
 
     main:has(> .content),
